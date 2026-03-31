@@ -1,0 +1,5 @@
+{
+  "name": "Nonna",
+  "description": "Nonna restaurant ordering app",
+  "requestFramePermissions": ["geolocation"]
+}
