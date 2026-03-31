@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-nonna-red: #D32F2F;
+  --color-nonna-red-dark: #B71C1C;
+  --color-nonna-green: #2E7D32;
+  --color-nonna-cream: #FDFBF7;
+  --color-nonna-dark: #2D2A26;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+body {
+  background-color: var(--color-nonna-cream);
+  color: var(--color-nonna-dark);
+}
