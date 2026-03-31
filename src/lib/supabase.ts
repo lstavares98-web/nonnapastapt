@@ -1,6 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://yvyrzqoyxpqmacajwst.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2eXJ6cW95eHBxbWFxY2Fqd3N0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ5NTcxOTcsImV4cCI6MjA5MDUzMzE5N30.U5fqfAPbSlmzCHxhtxuRI5pOe4M9V2N_Ca0Ws7PLxiA';
+// Agora o código vai ler as chaves que você configurou no painel da Vercel
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Faltando chaves do Supabase nas variáveis de ambiente!');
+}
+
+export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
